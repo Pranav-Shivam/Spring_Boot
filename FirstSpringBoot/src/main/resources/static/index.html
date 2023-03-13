@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload an image</title>
+</head>
+<body>
+
+<input id="file_upload" type="file" name="file_upload"/>
+<button id="upload-button" onclick="uploadFile()"> Upload</button>
+
+<script>
+    async function uploadFile() {
+        let formData = new FormData();
+        formData.append("data", file_upload.files[0]);
+        await fetch('http://localhost:8080/photos', {
+            method: "POST",
+            body: formData,
+        }).then(result => result.text())
+            .then(text => alert(text));
+    }
+
+
+</script>
+</body>
+</html>

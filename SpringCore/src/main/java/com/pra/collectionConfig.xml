@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/beans/spring-context.xsd">
+	<!-- bean definitions here -->
+	<bean class="com.pra.Employee" name="emp1">
+		<property name="name" value="Pranav" />
+		<property name="phone">
+			<list>
+				<value>827146</value>
+				<value>993937</value>
+				<value>971739</value>
+				<value>701585</value>
+			</list>
+		</property>
+		<property name="address">
+			<set>
+				<value>Banka</value>
+				<value>Rata</value>
+				<value>TATA</value>
+				<value>Bhagalpur</value>
+				<value>Varanasi</value>
+			</set>
+		</property>
+		<property name="course">
+			<map>
+				<entry key="java" value="7" />
+				<entry key="JS" value="2" />
+				<entry key="python" value="3" />
+				<entry key="c++" value="5" />
+			</map>
+		</property>
+		</bean>
+</beans>

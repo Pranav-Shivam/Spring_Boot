@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	 xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"
+						>
+	<!-- bean definitions here -->
+	<!--<context:annotation-config/> -->
+	<util:list list-class="java.util.LinkedList" id="mybestFrnd">
+		<value>Satyam</value>
+		<value>Chandan</value>
+		<value>Manish</value>
+		<value>Prateek</value>
+		<value>Abhishek</value>
+		<value>Mayush</value>
+	</util:list>
+	<util:map map-class="java.util.HashMap" id="fee">
+		<entry key="Spring Framework" value="8000"/>
+		<entry key="dJango Framework" value="5000"/>
+		<entry key="Hibernate Framework" value="2000"/>
+		<entry key="Servlet and JSP " value="3500"/>
+	</util:map>
+	<util:properties id="dbconfig">
+		<prop key="driver">com.mysql.jdbc.Driver</prop>
+		<prop key="username">root</prop>
+		<prop key="password">root</prop>
+		<prop key="url">mysql:jdbc://localhost:3306/database</prop>
+	</util:properties>
+	
+	<bean class="com.collectionStandAlone.Person" name="person1">
+		<property name="friends" ref="mybestFrnd"/>
+		<property name="feeStructure" ref="fee"/>
+		<property name="props" ref="dbconfig"/>
+	</bean>
+</beans>
